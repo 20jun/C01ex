@@ -6,7 +6,7 @@
 /*   By: youngjle <youngjle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 02:36:07 by youngjle          #+#    #+#             */
-/*   Updated: 2020/10/27 02:37:51 by youngjle         ###   ########.fr       */
+/*   Updated: 2020/10/27 22:24:49 by youngjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_putstr(char *str)
 {
-	write(1, &(*str), 1);
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
