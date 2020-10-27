@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youngjle <youngjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: youngjle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 03:04:57 by youngjle          #+#    #+#             */
-/*   Updated: 2020/10/27 19:46:26 by youngjle         ###   ########.fr       */
+/*   Created: 2020/10/27 18:57:43 by youngjle          #+#    #+#             */
+/*   Updated: 2020/10/27 19:37:58 by youngjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int i;
+	int j;
+	int temp;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = size - 1;
+	j = 0;
+	while (i > 0)
 	{
-		i++;
+		while (j < i)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				temp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = temp;
+			}
+			j++;
+		}
+		i--;
+		j = 0;
 	}
-	return (i);
 }

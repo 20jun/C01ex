@@ -3,37 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youngjle <youngjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: youngjle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 02:38:32 by youngjle          #+#    #+#             */
-/*   Updated: 2020/10/27 15:46:35 by youngjle         ###   ########.fr       */
+/*   Created: 2020/10/27 18:54:39 by youngjle          #+#    #+#             */
+/*   Updated: 2020/10/27 19:35:47 by youngjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
-int		ft_strlen(char *str);
+void	ft_sort_int_tab(int *tab, int size);
 
 int		main(void)
 {
-	char str[12];
-
-	str[0] = 'h';
-	str[1] = 'e';
-	str[2] = 'l';
-	str[3] = 'l';
-	str[4] = 'o';
-	str[5] = ' ';
-	str[6] = 'W';
-	str[7] = 'o';
-	str[8] = 'r';
-	str[9] = 'l';
-	str[10] = 'd';
-	str[11] = '\0';
+	int tab[6];
+	int size;
 	
-	printf("%s\n",str);
-	int num = ft_strlen(str);
-	printf("%d\n", num);
+	tab[0] = 15;
+	tab[1] = 10;
+	tab[2] = 100;
+	tab[3] = 25;
+	tab[4] = 1;
+	tab[5] = 55;
+	size = 6;
+
+	printf("%d %d %d %d %d %d \n", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5]);
+	ft_sort_int_tab(tab, size);
+	printf("%d %d %d %d %d %d \n", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5]);
 }

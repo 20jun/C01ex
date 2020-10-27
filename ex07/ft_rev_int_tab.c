@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youngjle <youngjle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: youngjle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 02:29:41 by youngjle          #+#    #+#             */
-/*   Updated: 2020/10/27 16:22:09 by youngjle         ###   ########.fr       */
+/*   Created: 2020/10/27 17:04:37 by youngjle          #+#    #+#             */
+/*   Updated: 2020/10/27 19:38:57 by youngjle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	int div;
-	int mod;
+	int i;
+	int temp[size];
 
-	div = *a / *b;
-	mod = *a % *b;
-	*a = div;
-	*b = mod;
+	i = 1;
+	while (i <= size)
+	{
+		temp[i - 1] = tab[size - i];
+		i++;
+	}
+	i = 0;
+	while (i < size)
+	{
+		tab[i] = temp[i];
+		i++;
+	}
 }
